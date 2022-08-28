@@ -45,6 +45,9 @@ public class ImageUtils {
 		
 		return "data:image/" + imageFormat + ";base64," + imgBase64;
 	}
+
+
+
 	
 	
 	

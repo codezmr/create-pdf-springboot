@@ -17,7 +17,7 @@ public class PdfGeneratorService {
 	
 	public ByteArrayOutputStream createPdf(String title) {
 		
-		return HtmlToPdfService.createPdfItext(renderHtmlForPdf(title));
+		return HtmlToPdfService.createPdfItext(renderHtmlForPdf(title), true);
 	}
 	
 	
@@ -26,6 +26,7 @@ public class PdfGeneratorService {
 		Context context = new Context();
 		context.setVariable("title", title);
 		context.setVariable("image1", ImageUtils.convertImageToBase64("/pdf/images/image1.png"));
+		//context.setVariable("barcode1", BarCodeService.getBarCodeAsBase64("Invoice-12354287"));
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.YY HH:mm:ss");
 		context.setVariable("today", dateFormat.format(new Date()));
